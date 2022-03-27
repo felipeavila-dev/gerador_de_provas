@@ -8,7 +8,7 @@ export const RegisterQuestions = () => {
   const [arrQuestion, setArrQuestion] = useState([]);
   // const [answer, setAnswer] = useState([]);
   const qtdAnswers = [0,1,2,3,4];
-  
+
   const handleAnswer = (event) => {
     let identifier = event.target.id;
     localStorage.setItem(`question${identifier}`, JSON.stringify(event.target.value));
@@ -21,7 +21,7 @@ export const RegisterQuestions = () => {
 
     localStorage.setItem('question', JSON.stringify(newArr));
   }
-  
+
   return (
     <Theme>
       <form>
@@ -40,7 +40,7 @@ export const RegisterQuestions = () => {
 
           <p>Antes de salvar, selecione a resposta correta para essa questao clicando 1x em cima</p>
 
-          <C.Button onClick={useLocalStorage}>Salvar</C.Button>      
+          <C.Button onClick={useLocalStorage}>Salvar</C.Button>
         </C.Container>
       </form>
     </Theme>

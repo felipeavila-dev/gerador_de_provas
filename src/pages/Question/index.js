@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import {Theme} from '../Theme';
-import * as C from './style';
-import {questions} from '../../questions';
 import { useNavigate } from 'react-router-dom';
+import { Theme } from '../Theme';
+import * as C from './style';
+import { questions } from '../../questions';
 
 export const Question = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -12,7 +12,7 @@ export const Question = () => {
 
 
   useEffect( () => {
-    let containsSelected = document.querySelector('.selected');  
+    let containsSelected = document.querySelector('.selected');
     if(containsSelected) {
       containsSelected.classList.remove('selected');
     }
@@ -31,12 +31,12 @@ export const Question = () => {
       setCurrentOptions(Number(event.target.getAttribute('value')));
     }
   }
-  
+
   const handleGoNext = () => {
     let containsSelected = document.querySelector('.selected');
     if(containsSelected) {
       localStorage.setItem(`option${currentQuestion}`, JSON.stringify(currentOption)); //FUNCIONANDO PERFEITAMENTE
-    
+
       if(currentQuestion === questions.length - 1) {
         navigate('/end');
       } else {
@@ -48,7 +48,7 @@ export const Question = () => {
   }
 
   const handleGoBack = () => {
-   
+
   }
 
   return (
@@ -60,13 +60,13 @@ export const Question = () => {
         </C.Question>
         <hr />
         <C.AnswerArea>
-          {questions[currentQuestion].options.map( (item, index) => ( 
-            <C.Answer key={index} value={index} onClick={handleSelectOption} >{item}</C.Answer>          
+          {questions[currentQuestion].options.map( (item, index) => (
+            <C.Answer key={index} value={index} onClick={handleSelectOption} >{item}</C.Answer>
           ))}
         </C.AnswerArea>
 
         {/* VALIDAÇÕES RELACIONADAS AOS BOTOES */}
-        {currentQuestion < questions.length - 1 && 
+        {currentQuestion < questions.length - 1 &&
           <>
             <C.Button onClick={handleGoBack} bgColor={'darkred'}>Voltar</C.Button>
             <C.Button onClick={handleGoNext}>Avançar</C.Button>
