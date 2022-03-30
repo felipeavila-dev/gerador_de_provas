@@ -1,6 +1,9 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+💠 <b>React Js</b>: A JavaScript library for building user interfaces . \
+☸️ <b>Bootstrap</b>: Most popular front-end open source toolkit.
+
 
 ## Available Scripts
 
