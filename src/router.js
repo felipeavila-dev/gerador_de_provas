@@ -4,6 +4,8 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import {Question} from './pages/Question';
 import { EndTest } from './pages/EndTest';
 import {RegisterQuestions} from './pages/RegisterQuestions'
+import {Logout} from './pages/Logout';
+import {Login} from './pages/Login';
 
 export const Router = () => {
     return(
@@ -12,6 +14,8 @@ export const Router = () => {
                 <Route path='/' element={<Question />}/>
                 <Route path='/end' element={<EndTest />}/>
                 <Route path='/register' element={<RegisterQuestions />}/>
+                <Route path='/logout' element={<Logout />} />
+                <Route path='/login' element={<Login />} />
             </Routes>
         </BrowserRouter>
     )

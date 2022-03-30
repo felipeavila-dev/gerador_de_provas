@@ -35,18 +35,6 @@ export const Answer = styled.p`
 `;
 
 export const Button = styled.button`
-  background-color: ${props => props.bgColor ? 'transparent' : 'green'};
-  border: 0;
-  padding: 10px 20px;
-  border-radius: 10px;
-  color: ${props => props.bgColor ? 'darkred' : 'white'};
-  font-weight: ${props => props.bgColor ? '' : 'bold'};
-  margin-top: 10px;
-  margin-right: 10px;
-  cursor: pointer;
-
-  &:hover{
-    background-color: ${props => props.bgColor ? '': 'darkgreen'};
-    text-decoration: ${props => props.bgColor ? 'underline': ''};
+  margin-right: 15px;
   }
 `;
