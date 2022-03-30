@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import * as C from './style';
 // import {questions} from '../../questions';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 export const EndTest = () => {
+  const checkLogin = useSelector((state) => state.login);
   const [result, setResult] = useState(0);
   const localQuestions = JSON.parse(localStorage.getItem('question'));
 
+  const navigate = useNavigate();
+
   useEffect( ()=> {
+    if(!checkLogin.isLogged) navigate('/login');
     let answers = []; 
     for(let i = 0; i < localQuestions.length; i++) {
       answers.push(JSON.parse(localStorage.getItem(`option${i}`)));

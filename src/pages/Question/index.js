@@ -3,18 +3,21 @@ import { useNavigate } from 'react-router-dom';
 import { Theme } from '../Theme';
 import * as C from './style';
 import {questions} from '../../questions';
-// eslint-disable-next-line no-unused-vars
-import bootstrap from 'bootstrap';
+
+import { useSelector } from 'react-redux';
+
 
 export const Question = () => {
+  const checkLogin = useSelector((state) => state.login);
+
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [currentOption, setCurrentOption] = useState('valor padrao');
-  // eslint-disable-next-line no-unused-vars
   const [updatedQuestions, setUpdatedQuestions] = useState(questions);
   
   const navigate = useNavigate();
   
     useEffect(() => {
+        if(!checkLogin.isLogged) navigate('/login'); //Confere se o usuario esta logado. Caso nao esteja, redireciona para o login
       const checkLocal = localStorage.getItem('question');
       if(!checkLocal){
         localStorage.setItem('question', JSON.stringify(questions));

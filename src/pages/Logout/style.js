@@ -12,7 +12,7 @@ export const Container = styled.div`
   #emoji {
     font-size: 60px;
   }
-
+  
   h3{
     
   }

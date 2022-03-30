@@ -1,7 +1,13 @@
 import React, { useState } from "react"
 import { useNavigate } from "react-router-dom";
 
+import { useDispatch } from "react-redux";
+import {setLogin} from '../../redux-reducer/loginReducer';
+
 export const Login = () => {
+  const dispatch = useDispatch();
+  // const checkLogin = useSelector((state) => state.login);
+
   const [userData, setUserData] = useState({
     user: '',
     password: ''
@@ -12,7 +18,7 @@ export const Login = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if( userData.user === 'usuario@usuario.com.br' && userData.password === '12345'){
-      alert('Login efetuado com sucesso');
+      dispatch(setLogin(true))
       navigate('/');
     } else{
       alert('Usuario e/ou senha inválidos');

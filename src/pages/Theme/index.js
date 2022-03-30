@@ -3,10 +3,16 @@ import React from 'react';
 import * as C from './style.js';
 import { Link } from 'react-router-dom';
 
+import { useDispatch } from 'react-redux';
+import {setLogin} from '../../redux-reducer/loginReducer';
+
 export const Theme = (props) => {
+
+  const dispatch = useDispatch();
+
   const handleLogout = () => {
     localStorage.clear();
-    alert('Obrigado por visitar nosso sistema. Até mais');
+    dispatch(setLogin(false));
   }
   return(
     <C.Container className='container'>
