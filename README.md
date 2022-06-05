@@ -1,11 +1,11 @@
-# Developed with:
+# Tecnologias utilizadas:
 
-💠 <b>React Js</b>: A JavaScript library for building user interfaces . \
-☸️ <b>Bootstrap</b>: Most popular front-end open source toolkit.
+💠 <b>React Js</b> \
+☸️ <b>Bootstrap</b>
 
 ![Peek 01-04-2022 15-41](https://user-images.githubusercontent.com/26674677/161324013-10dac67b-fe7d-4bc1-a286-a9d0ea194143.gif)
 
-## To clone this project
+## Para clonar o projeto
 
 SSH: `git@github.com:felipeavila-dev/gerador_de_provas.git`
 
@@ -15,14 +15,13 @@ HTTPS: `https://github.com/felipeavila-dev/gerador_de_provas.git`
 
 --------------------------
 
-## To instal all dependences
+## Para instalar as dependências
 
-Go to the project folder and run `npm install`.
-This command will install all mandatories dependences.
+GExecute o comando seguinte dentro da pasta do projeto: `npm install`.
 
-## To run this project
+## Para executar o projeto
 
-Run: `npm start`
+Execute: `npm start`
 
 
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
